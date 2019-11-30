@@ -22,7 +22,7 @@ class AuthorsController < ApplicationController
       # to display them alongside the user's entries.
       render :new
     end
-    
+
   end
 
   private
