@@ -8,7 +8,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
+    CategoryValidator.new(@post).validate
+    if @post.valid?
+      @post.update(post_params)
       redirect_to post_path(@post)
     else
       render :edit
