@@ -9,9 +9,9 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
 
-    if @post.valid?
+    if @author.valid?
       # If--and only if--the post is valid, do what we usually do.
-      @post.save
+      @author.save
       # This returns a status_code of 302, which instructs the browser to
       # perform a NEW REQUEST! (AKA: throw @post away and let the show action
       # worry about re-reading it from the database)
