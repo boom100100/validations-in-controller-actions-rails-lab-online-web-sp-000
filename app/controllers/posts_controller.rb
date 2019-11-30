@@ -8,11 +8,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.errors.any?
-      render :edit
-    else
-      @post.update(post_params)
+    if @post.update(post_params)
       redirect_to post_path(@post)
+    else
+      render :edit
     end
   end
 
