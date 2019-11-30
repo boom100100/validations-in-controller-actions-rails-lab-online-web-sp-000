@@ -1,7 +1,7 @@
 class CategoryValidator < ActiveModel::Validator
   def validate(record)
     unless record.category.match?(/Fiction|Non-Fiction/)
-      record.errors[:name] << "We're only allowed to have people who work for the company in the database!"
+      record.errors[:category] << "Category must be Fiction or Non-Fiction."
     end
   end
 end
