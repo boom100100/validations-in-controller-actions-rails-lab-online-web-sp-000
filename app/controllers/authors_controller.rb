@@ -10,10 +10,10 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
 
     if @author.valid?
-      
+
       @author.save
       redirect_to author_path(@author)
-      
+
     else
       # If the post is invalid, hold on to @post, because it is now full of
       # useful error messages, and re-render the :new page, which knows how
