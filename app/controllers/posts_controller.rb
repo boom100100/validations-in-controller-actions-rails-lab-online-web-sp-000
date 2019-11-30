@@ -9,11 +9,10 @@ class PostsController < ApplicationController
 
   def update
     CategoryValidator.new(@post).validate
-    if @post.valid?
-      @post.update(post_params)
+    if @post.update(post_params)
       redirect_to post_path(@post)
     else
-      render :show
+      render :edit
     end
   end
 
